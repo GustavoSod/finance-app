@@ -9,12 +9,14 @@ export default function DoubleButton() {
       <TouchableOpacity
         onPress={() => setSelected('income')}
         className={`w-[45%] text-center rounded-xl p-3 items-center justify-center ${selected === 'income' ? 'bg-cyan-600' : 'bg-transparent'}`}
+        testID="button-bitcoin"
       >
         <Text className='text-white text-base font-semibold'>Bitcoin</Text>
       </TouchableOpacity>
       <TouchableOpacity
         onPress={() => setSelected('expenses')}
         className={`w-[45%] text-center rounded-xl p-3 items-center justify-center ${selected === 'expenses' ? 'bg-cyan-600' : 'bg-transparent'}`}
+        testID="button-ethereum"
       >
         <Text className='text-white text-base font-semibold'>Ethereum</Text>
       </TouchableOpacity>

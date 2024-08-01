@@ -4,7 +4,7 @@ import { VictoryChart,  VictoryLine, VictoryAxis } from 'victory-native'
 
 export default function HomeChart() {
   return (
-    <View className='flex'>
+    <View className='flex' testID='victory-chart-container'>
       <VictoryChart>
             <VictoryAxis
               tickValues={['nov 9', 'nov 10', 'nov 11', 'nov 12', 'nov 13']}
