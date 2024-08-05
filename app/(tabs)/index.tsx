@@ -13,7 +13,7 @@ export default function HomeScreen() {
       <StatusBar style='light'/>
       <SafeAreaView className='flex-1'>
         <ScrollView className=''>
-            <View className='flex-row items-center justify-between me-10 ms-10 mt-4'>
+            <View className='flex-row items-center justify-between me-10 ms-10 mt-8'>
               <View>
                 <Image style={{width: 50, height: 50, borderRadius: 30}} source={require('../../assets/images/person.jpg')}/>
               </View>
@@ -36,14 +36,14 @@ export default function HomeScreen() {
           <View className='w-full items-center mt-4'>
             <Congrats/>
           </View>
-          <View className='w-full items-center mt-8'>
+          <View className='w-full items-center mt-14'>
             <View className='w-[85%]'>
+              <Text className='text-gray-300 text-2xl font-semibold'>Top 10 cryptos</Text>
               <Text className='text-gray-300 text-lg'>highest income</Text>
-              <Text className='text-gray-300 text-3xl font-semibold'>Top 10 cryptos</Text>
             </View>
           </View>
           <View className='w-full items-center mt-6 mb-4'>
-            <ScrollView horizontal={true} showsHorizontalScrollIndicator={false} className='w-[90%] flex-row'>
+            <ScrollView horizontal={true} showsHorizontalScrollIndicator={false} className='w-[85%] flex-row'>
               <CryptoView/>
               <CryptoView/>
               <CryptoView/>
