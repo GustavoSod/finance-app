@@ -13,7 +13,7 @@ export default function HomeScreen() {
       <StatusBar style='light'/>
       <SafeAreaView className='flex-1'>
         <ScrollView className=''>
-            <View className='flex-row items-center justify-between me-10 ms-10 mt-8'>
+            <View className='flex-row items-center justify-between me-10 ms-10 mt-6'>
               <View>
                 <Image style={{width: 50, height: 50, borderRadius: 30}} source={require('../../assets/images/person.jpg')}/>
               </View>
@@ -33,7 +33,7 @@ export default function HomeScreen() {
           <View className='mt-2'>
             <HomeChart/>
           </View>
-          <View className='w-full items-center mt-4'>
+          <View className='w-full items-center mt-6'>
             <Congrats/>
           </View>
           <View className='w-full items-center mt-14'>

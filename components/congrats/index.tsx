@@ -3,7 +3,7 @@ import { View, Text } from 'react-native'
 
 export default function Congrats() {
   return (
-    <View className='w-[75%] bg-cyan-600 p-3 rounded-2xl flex-row items-center'>
+    <View className='w-[75%] bg-cyan-600 p-3 rounded-xl flex-row items-center'>
         <View className='bg-zinc-800 p-3 rounded-full'>
             <Text className='text-3xl'>👏</Text>
         </View>
