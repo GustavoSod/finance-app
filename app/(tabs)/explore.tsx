@@ -63,7 +63,7 @@ export default function TabTwoScreen() {
         <View className='w-full h-[100%]'>
           <FlatList
             data={displayedData}
-            className=' h-[100%] mt-10'
+            className=' mt-10'
             keyExtractor={(item) => item.stock}
             renderItem={({ item }) => (
               <StockView item={item} /> 

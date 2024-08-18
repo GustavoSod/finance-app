@@ -12,7 +12,7 @@ const StockView: React.FC<StockViewProps> = ({ item }) => {
   const changeValue = parseFloat(item.change);
 
   return (
-    <View className='h-24 mb-10 flex-row bg-zinc-800 me-6 ms-6 rounded-lg items-center'>
+    <View className='h-[80px] mb-4 flex-row bg-zinc-800 rounded-lg items-center'>
       <View className='w-16 h-16 overflow-hidden rounded-xl ml-4'>
         <SvgUri
           width="100%"
@@ -22,7 +22,7 @@ const StockView: React.FC<StockViewProps> = ({ item }) => {
         />
       </View>
       <View className='flex-row justify-between w-[75%]'>
-        <View className='flex-col text-left justify-between h-[70%] ml-6'>
+        <View className='flex-col text-left justify-between h-[70%] ml-4'>
           <Text className='text-white text-xl'>{item.name}</Text>
           <Text className='text-white text-base'>{item.stock}</Text>
         </View>
