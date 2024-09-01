@@ -9,6 +9,7 @@ export default function TabTwoScreen() {
   const [cryptoData, setCryptoData] = useState<CryptoData[]>([]);
   const [displayedData, setDisplayedData] = useState<CryptoData[]>([]);
   const [page, setPage] = useState(1);
+  const [searchText, setSearchText] = useState('');
   const [loading, setLoading] = useState(false);
   const itemsPerPage = 10;
 
@@ -31,6 +32,14 @@ export default function TabTwoScreen() {
     stocks();
   }, []);
 
+  useEffect(() => {
+    const filteredData = cryptoData.filter(item =>
+      item.stock.toLowerCase().includes(searchText.toLowerCase())
+    );
+    setDisplayedData(filteredData.slice(0, itemsPerPage));
+    setPage(1);
+  }, [searchText, cryptoData]);
+
   const loadMoreItems = () => {
     if (loading) return;
 
@@ -49,31 +58,37 @@ export default function TabTwoScreen() {
     }, 700);
   };
 
-  return (
-    <View style={{ flex: 1, backgroundColor: '#151718' }}>
-      <SafeAreaView className='flex-1 items-center'>
-        <View className='flex-row items-center bg-zinc-800 w-[90%] rounded-lg p-2 mt-6'>
-          <Ionicons name="search" size={24} color="#eee" className='ml-3' />
-          <TextInput 
-            placeholder='Find a crypto' 
-            className='flex-1 text-xl text-white ml-4' 
-            placeholderTextColor='#eee'
-          />
-        </View>
-        <View className='w-full h-[100%]'>
-          <FlatList
-            data={displayedData}
-            className=' mt-10'
-            keyExtractor={(item) => item.stock}
-            renderItem={({ item }) => (
-              <StockView item={item} /> 
-            )}
-            onEndReached={loadMoreItems}
-            onEndReachedThreshold={0.1} 
-            ListFooterComponent={loading ? <ActivityIndicator size="large" color="#fff" className='color-cyan-600' /> : null} // Loading indicator
-          />
-        </View>
-      </SafeAreaView>
-    </View>
-  );
+  if(cryptoData){
+    return (
+      <View style={{ flex: 1, backgroundColor: '#151718' }}>
+        <SafeAreaView className='flex-1 items-center'>
+          <View className='flex-row items-center bg-zinc-800 w-[90%] rounded-lg p-2 mt-6'>
+            <Ionicons name="search" size={24} color="#eee" className='ml-3' />
+            <TextInput 
+              value={searchText}
+              onChangeText={(text) => setSearchText(text)}
+              placeholder='Find Stocks' 
+              className='flex-1 text-xl text-white ml-4' 
+              placeholderTextColor='#eee'
+            />
+          </View>
+          <View className='w-full h-[100%]'>
+            <FlatList
+              data={displayedData}
+              className=' mt-10'
+              keyExtractor={(item) => item.stock}
+              renderItem={({ item }) => (
+                <StockView item={item} /> 
+              )}
+              onEndReached={loadMoreItems}
+              onEndReachedThreshold={0.1} 
+              ListFooterComponent={loading ? <ActivityIndicator size="large" color="#fff" className='color-cyan-600' /> : null} // Loading indicator
+            />
+          </View>
+        </SafeAreaView>
+      </View>
+    );
+  } else {
+    <ActivityIndicator size="large" color="#fff" />
+  }
 }

@@ -24,7 +24,7 @@ export default function HomeScreen() {
           <View className='w-full items-center mt-10'>
             <View className='w-[85%]'>
               <Text className='text-gray-300 text-lg'>Hello, User!</Text>
-              <Text className='text-gray-300 text-4xl font-semibold'>Famous cryptos 💵</Text>
+              <Text className='text-gray-300 text-4xl font-semibold'>Famous Stocks 💵</Text>
             </View>
           </View>
           <View className='w-full items-center mt-6'>
@@ -38,7 +38,7 @@ export default function HomeScreen() {
           </View>
           <View className='w-full items-center mt-14'>
             <View className='w-[85%]'>
-              <Text className='text-gray-300 text-2xl font-semibold'>Top 10 cryptos</Text>
+              <Text className='text-gray-300 text-2xl font-semibold'>Top 10 Stocks</Text>
               <Text className='text-gray-300 text-lg'>highest income</Text>
             </View>
           </View>
