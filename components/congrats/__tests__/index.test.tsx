@@ -8,6 +8,6 @@ describe('Congrats Component', () => {
 
     expect(getByText('👏')).toBeTruthy();
     expect(getByText('Well done, User!!')).toBeTruthy();
-    expect(getByText('Your cryptocurrencies are growing')).toBeTruthy();
+    expect(getByText('Your stocks are growing')).toBeTruthy();
   });
 });

@@ -9,7 +9,7 @@ export default function Congrats() {
         </View>
         <View>
             <Text className='text-white font-bold text-lg ml-4'>Well done, User!!</Text>
-            <Text className='text-gray-300 text-sm ml-4'>Your cryptos are growing</Text>
+            <Text className='text-gray-300 text-sm ml-4'>Your stocks are growing</Text>
         </View>
     </View>
   )
